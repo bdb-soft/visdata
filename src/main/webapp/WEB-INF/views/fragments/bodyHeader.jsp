@@ -8,11 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+            <a class="navbar-brand" href="index">VisData</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:void(0)">Active</a></li>
+                <li class="active"><a href="javascript:void(0)">Помочь проекту</a></li>
                 <li><a href="javascript:void(0)">Link</a></li>
                 <li class="dropdown">
                     <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown

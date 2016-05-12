@@ -11,14 +11,15 @@
 <jsp:include page="fragments/bodyHeader.jsp"/>
 <div class="container">
     <h1>Something is coming</h1>
-    <form class="form-horizontal">
+
+    <form class="form-horizontal" method="POST" action="uploadFile" enctype="multipart/form-data">
         <fieldset>
             <div class="form-group">
                 <label for="inputFile" class="col-md-2 control-label">File</label>
 
                 <div class="col-md-10">
                     <input type="text" readonly="" class="form-control" placeholder="Browse...">
-                    <input type="file" id="inputFile" multiple="">
+                    <input type="file" id="inputFile" name="file">
                 </div>
             </div>
             <div class="form-group">
@@ -29,6 +30,7 @@
             </div>
         </fieldset>
     </form>
+
 </div>
 
 
