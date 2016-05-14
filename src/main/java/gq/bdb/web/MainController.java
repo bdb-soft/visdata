@@ -1,5 +1,6 @@
 package gq.bdb.web;
 
+import gq.bdb.common.FileContoller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,9 @@ public class MainController {
                 byte[] bytes = file.getBytes();
 
                 name = file.getOriginalFilename();
-
+                if (!FileContoller.checkFileExtension(name)) {
+                    throw new Exception("incorrect File type");
+                }
                 String rootPath = "D:\\DEV\\temp\\visdata";
                 File dir = new File(rootPath + File.separator + "loadFiles");
 
@@ -51,12 +54,12 @@ public class MainController {
                 stream.flush();
                 stream.close();
 
-//                logger.info("uploaded: " + uploadedFile.getAbsolutePath());
                 model.addAttribute("fileName", name);
                 return "uploadFile";
 
             } catch (Exception e) {
-                return "You failed to upload " + name + " => " + e.getMessage();
+                e.printStackTrace();
+                return "You failed to upload " + name + " => " + e.getLocalizedMessage();
             }
         } else {
             return "You failed to upload " + name + " because the file was empty.";
