@@ -1,10 +1,10 @@
 package gq.bdb.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedOutputStream;
@@ -20,9 +20,14 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping(value = "/help", method = RequestMethod.GET)
+    public String showHelp() {
+        System.out.println("MainController.showHelp done");
+        return "help";
+    }
+
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-    @ResponseBody
-    public String uploadFile(@RequestParam("file") MultipartFile file) {
+    public String uploadFile(@RequestParam("file") MultipartFile file, ModelMap model) {
 
         String name = null;
 
@@ -32,7 +37,7 @@ public class MainController {
 
                 name = file.getOriginalFilename();
 
-                String rootPath = "D:\\DEV\\Projects\\visdata\\src\\main\\webapp\\WEB-INF\\data";
+                String rootPath = "D:\\DEV\\temp\\visdata";
                 File dir = new File(rootPath + File.separator + "loadFiles");
 
                 if (!dir.exists()) {
@@ -47,8 +52,8 @@ public class MainController {
                 stream.close();
 
 //                logger.info("uploaded: " + uploadedFile.getAbsolutePath());
-
-                return "You successfully uploaded file=" + name;
+                model.addAttribute("fileName", name);
+                return "uploadFile";
 
             } catch (Exception e) {
                 return "You failed to upload " + name + " => " + e.getMessage();

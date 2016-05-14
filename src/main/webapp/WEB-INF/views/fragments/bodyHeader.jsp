@@ -12,7 +12,7 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:void(0)">Помочь проекту</a></li>
+                <li class="active"><a href="help">Помочь проекту</a></li>
                 <li><a href="javascript:void(0)">Link</a></li>
                 <li class="dropdown">
                     <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
