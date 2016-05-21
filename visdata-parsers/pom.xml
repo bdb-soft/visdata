@@ -13,4 +13,26 @@
     <artifactId>visdata-parsers</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.univocity</groupId>
+            <artifactId>univocity-parsers</artifactId>
+            <version>2.1.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${project.source.version}</source>
+                    <target>${project.source.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
