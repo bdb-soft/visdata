@@ -1,4 +1,4 @@
-package gq.bdb.common;
+package common;
 
 import org.apache.commons.io.FilenameUtils;
 
