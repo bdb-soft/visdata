@@ -18,6 +18,7 @@
     <modules>
         <module>visdata-web</module>
         <module>visdata-parsers</module>
+        <module>visdata-services</module>
     </modules>
 
     <dependencies>

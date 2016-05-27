@@ -1,10 +1,10 @@
-package common;
+package gq.bdb.services;
 
 import org.apache.commons.io.FilenameUtils;
 
 import java.util.Arrays;
 
-public class FileContoller {
+public class FileService {
 
     private static final String[] CORRECT_EXTENSION_ARRAY = {"csv", "xml", "json", "txt"};
 

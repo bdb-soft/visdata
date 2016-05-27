@@ -1,6 +1,6 @@
 package gq.bdb.web;
 
-import common.FileContoller;
+import gq.bdb.services.FileService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,7 @@ public class MainController {
                 byte[] bytes = file.getBytes();
 
                 name = file.getOriginalFilename();
-                if (!FileContoller.checkFileExtension(name)) {
+                if (!FileService.checkFileExtension(name)) {
                     throw new Exception("incorrect File type");
                 }
                 String rootPath = "D:\\DEV\\temp\\visdata";
